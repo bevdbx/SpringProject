@@ -1,0 +1,231 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=9612, tid=31732
+#
+# JRE version:  (21.0.1+12) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.1+12-29, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dorg.gradle.internal.worker.tmpdir=D:\lab11IS\hello-spring\hello-spring\build\tmp\test\work -Dorg.gradle.native=false -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+
+Host: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+Time: Sun Dec 17 15:12:11 2023 GTB Standard Time elapsed time: 0.011053 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001918a261270):  JavaThread "Unknown thread" [_thread_in_vm, id=31732, stack(0x0000008597800000,0x0000008597900000) (1024K)]
+
+Stack: [0x0000008597800000,0x0000008597900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c9029]
+V  [jvm.dll+0x854b81]
+V  [jvm.dll+0x856e5e]
+V  [jvm.dll+0x857543]
+V  [jvm.dll+0x280c06]
+V  [jvm.dll+0x6c5715]
+V  [jvm.dll+0x6ba10a]
+V  [jvm.dll+0x3557ea]
+V  [jvm.dll+0x35d436]
+V  [jvm.dll+0x3ae1be]
+V  [jvm.dll+0x3ae468]
+V  [jvm.dll+0x3291fc]
+V  [jvm.dll+0x329d8b]
+V  [jvm.dll+0x81d179]
+V  [jvm.dll+0x3bb4f1]
+V  [jvm.dll+0x805ae8]
+V  [jvm.dll+0x44effe]
+V  [jvm.dll+0x450901]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17344]
+C  [ntdll.dll+0x526b1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff9a56d9b88, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000001918c3894f0 WorkerThread "GC Thread#0"                     [id=10684, stack(0x0000008597900000,0x0000008597a00000) (1024K)]
+  0x000001918c38e3e0 ConcurrentGCThread "G1 Main Marker"            [id=2964, stack(0x0000008597a00000,0x0000008597b00000) (1024K)]
+  0x000001918c38ffb0 WorkerThread "G1 Conc#0"                       [id=25632, stack(0x0000008597b00000,0x0000008597c00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff9a4e4c2c7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff9a574a6f8] Heap_lock - owner thread: 0x000001918a261270
+
+Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff9a5231be9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.005 Loaded shared library C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7f8340000 - 0x00007ff7f834e000 	C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\java.exe
+0x00007ffa01e50000 - 0x00007ffa02048000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffa003e0000 - 0x00007ffa0049d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9ffa30000 - 0x00007ff9ffd26000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9ff890000 - 0x00007ff9ff990000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff9f8690000 - 0x00007ff9f86a8000 	C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\jli.dll
+0x00007ff9f86b0000 - 0x00007ff9f86cb000 	C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\VCRUNTIME140.dll
+0x00007ffa017a0000 - 0x00007ffa0193e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9ff7b0000 - 0x00007ff9ff7d2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9e42a0000 - 0x00007ff9e453a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5\COMCTL32.dll
+0x00007ffa00880000 - 0x00007ffa008ac000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffa007e0000 - 0x00007ffa0087e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9ff690000 - 0x00007ff9ff7aa000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9ff990000 - 0x00007ff9ffa2d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffa00680000 - 0x00007ffa006b0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff9f85e0000 - 0x00007ff9f85ec000 	C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\vcruntime140_1.dll
+0x00007ff9d6270000 - 0x00007ff9d62fe000 	C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\msvcp140.dll
+0x00007ff9a4b10000 - 0x00007ff9a5825000 	C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\server\jvm.dll
+0x00007ffa00330000 - 0x00007ffa003df000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffa01120000 - 0x00007ffa011bc000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffa006b0000 - 0x00007ffa007d6000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffa00940000 - 0x00007ffa009ab000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9ff390000 - 0x00007ff9ff3db000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff9f44a0000 - 0x00007ff9f44aa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9ea510000 - 0x00007ff9ea537000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9ff370000 - 0x00007ff9ff382000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff9fdd40000 - 0x00007ff9fdd52000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff9f5450000 - 0x00007ff9f545a000 	C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\jimage.dll
+0x00007ff9fd2b0000 - 0x00007ff9fd494000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff9e7f60000 - 0x00007ff9e7f94000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff9ffd60000 - 0x00007ff9ffde2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff9e98c0000 - 0x00007ff9e98df000 	C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\lenovo\.jdks\openjdk-21.0.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5;C:\Users\lenovo\.jdks\openjdk-21.0.1\bin\server
+
+VM Arguments:
+jvm_args: -Dorg.gradle.internal.worker.tmpdir=D:\lab11IS\hello-spring\hello-spring\build\tmp\test\work -Dorg.gradle.native=false -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -ea 
+java_command: worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+java_class_path (initial): C:\\Users\\lenovo\\.gradle\\caches\\8.5\\workerMain\\gradle-worker.jar;D:\\lab11IS\\hello-spring\\hello-spring\\build\\classes\\java\\test;D:\\lab11IS\\hello-spring\\hello-spring\\build\\classes\\java\\main;D:\\lab11IS\\hello-spring\\hello-spring\\build\\resources\\main;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-web\\3.2.0\\e609f839e7c2ff9c90bc75d7c05dbcbb19315319\\spring-boot-starter-web-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-thymeleaf\\3.2.0\\aafdb22a1cb8f8f7f38786417a39d56de51213ba\\spring-boot-starter-thymeleaf-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-test\\3.2.0\\afe5dc428297302f6aefd118aedced224cf2b672\\spring-boot-starter-test-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-json\\3.2.0\\e831483c03433b987cc9c72f8ea67757f9865191\\spring-boot-starter-json-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter\\3.2.0\\4d0cc70617a9febbbc6ad81562e930d93f7b2665\\spring-boot-starter-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-tomcat\\3.2.0\\fc758099e394fe5646d9e36883fab38da4b26e22\\spring-boot-starter-tomcat-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-webmvc\\6.1.1\\76c4408b67828aa9656f5955dc2c1c4c0e1b6da3\\spring-webmvc-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-web\\6.1.1\\4eeb5f2edb9f04d00357edcc56b59d3874b3b453\\spring-web-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.thymeleaf\\thymeleaf-spring6\\3.1.2.RELEASE\\6030c7b4e260c41336f378e53da6e8531263f24b\\thymeleaf-spring6-3.1.2.RELEASE.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-test-autoconfigure\\3.2.0\\4d096363d61b38f3a4151c3a4460e7cd92c52ca8\\spring-boot-test-autoconfigure-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-test\\3.2.0\\6233f2d662826923cb87e8b659224c75cac6ed78\\spring-boot-test-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\com.jayway.jsonpath\\json-path\\2.8.0\\b4ab3b7a9e425655a0ca65487bbbd6d7ddb75160\\json-path-2.8.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\jakarta.xml.bind\\jakarta.xml.bind-api\\4.0.1\\ca2330866cbc624c7e5ce982e121db1125d23e15\\jakarta.xml.bind-api-4.0.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\net.minidev\\json-smart\\2.5.0\\57a64f421b472849c40e77d2e7cce3a141b41e99\\json-smart-2.5.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.assertj\\assertj-core\\3.24.2\\ebbf338e33f893139459ce5df023115971c2786f\\assertj-core-3.24.2.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.awaitility\\awaitility\\4.2.0\\2c39784846001a9cffd6c6b89c78de62c0d80fb8\\awaitility-4.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.hamcrest\\hamcrest\\2.2\\1820c0968dba3a11a1b30669bb1f01978a91dedc\\hamcrest-2.2.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.mockito\\mockito-junit-jupiter\\5.7.0\\ac2d6a3431747a7986b8f4abef465f72bf3a21ae\\mockito-junit-jupiter-5.7.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.jupiter\\junit-jupiter-params\\5.10.1\\c8f15d4e99940c4564098af78c10809c00fdca06\\junit-jupiter-params-5.10.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.jupiter\\junit-jupiter-engine\\5.10.1\\6c9ff773f9aa842b91d1f2fe4658973252ce2428\\junit-jupiter-engine-5.10.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.jupiter\\junit-jupiter-api\\5.10.1\\eb90c7d8bfaae8fdc97b225733fcb595ddd72843\\junit-jupiter-api-5.10.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.platform\\junit-platform-engine\\1.10.1\\f32ae4af74fde68414b8a3d2b7cf1fb43824a83a\\junit-platform-engine-1.10.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.platform\\junit-platform-commons\\1.10.1\\2bfcd4a4e38b10c671b6916d7e543c20afe25579\\junit-platform-commons-1.10.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.jupiter\\junit-jupiter\\5.10.1\\6e5c7dd668d6349cb99e52ab8321e73479a309bc\\junit-jupiter-5.10.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.mockito\\mockito-core\\5.7.0\\a1c258331ab91d66863c983aff7136357e9de056\\mockito-core-5.7.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.skyscreamer\\jsonassert\\1.5.1\\6d842d0faf4cf6725c509a5e5347d319ee0431c3\\jsonassert-1.5.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-test\\6.1.1\\e86044a9b56e7c6860d643dd11b7b44624cce4a\\spring-test-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-autoconfigure\\3.2.0\\29b231378146bd6606e75389297f3a7d55476b87\\spring-boot-autoconfigure-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot\\3.2.0\\4088ad23df91481bc7415cbfa068c423ccb7e54e\\spring-boot-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-context\\6.1.1\\610d7dd3f62d22d42b993a201e3110649b68e17\\spring-context-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-aop\\6.1.1\\66cb0e08770d4523ae3976b0b791cde767466c61\\spring-aop-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-beans\\6.1.1\\6af88af13193acf2197bc0a42f0ec4e5c481bfe9\\spring-beans-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-expression\\6.1.1\\807700a64cb055ed85af189d1fa0702bc0d2efba\\spring-expression-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-core\\6.1.1\\22d73bef97aff8a74a992716fe1aafc8f8a8a68d\\spring-core-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.xmlunit\\xmlunit-core\\2.9.1\\e5833662d9a1279a37da3ef6f62a1da29fcd68c4\\xmlunit-core-2.9.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-logging\\3.2.0\\54998ab18f16e8d3a6e46c3d326f2de41c0b1ce0\\spring-boot-starter-logging-3.2.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\jakarta.annotation\\jakarta.annotation-api\\2.1.1\\48b9bda22b091b1f48b13af03fe36db3be6e1ae3\\jakarta.annotation-api-2.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.yaml\\snakeyaml\\2.2\\3af797a25458550a16bf89acc8e4ab2b7f2bfce0\\snakeyaml-2.2.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.datatype\\jackson-datatype-jsr310\\2.15.3\\4a20a0e104931bfa72f24ef358c2eb63f1ef2aaf\\jackson-datatype-jsr310-2.15.3.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.module\\jackson-module-parameter-names\\2.15.3\\8d251b90c5358677e7d8161e0c2488e6f84f49da\\jackson-module-parameter-names-2.15.3.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.core\\jackson-annotations\\2.15.3\\79baf4e605eb3bbb60b1c475d44a7aecceea1d60\\jackson-annotations-2.15.3.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.core\\jackson-core\\2.15.3\\60d600567c1862840397bf9ff5a92398edc5797b\\jackson-core-2.15.3.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.datatype\\jackson-datatype-jdk8\\2.15.3\\80158cb020c7bd4e4ba94d8d752a65729dc943b2\\jackson-datatype-jdk8-2.15.3.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.core\\jackson-databind\\2.15.3\\a734bc2c47a9453c4efa772461a3aeb273c010d9\\jackson-databind-2.15.3.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.tomcat.embed\\tomcat-embed-websocket\\10.1.16\\5c372739ee9409b47c474d8d47d276a7cd9bc2b\\tomcat-embed-websocket-10.1.16.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.tomcat.embed\\tomcat-embed-core\\10.1.16\\176162fb3998856a90436826034ffe5d25beaeb9\\tomcat-embed-core-10.1.16.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.tomcat.embed\\tomcat-embed-el\\10.1.16\\f057e54bfffe99df7f0d04cd4e688e55bf8a0da5\\tomcat-embed-el-10.1.16.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\io.micrometer\\micrometer-observation\\1.12.0\\4f4981faa7968441d0092107df9b750e057374af\\micrometer-observation-1.12.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.thymeleaf\\thymeleaf\\3.1.2.RELEASE\\273997509a4c7aef86cee0521750140c587d9be2\\thymeleaf-3.1.2.RELEASE.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\ch.qos.logback\\logback-classic\\1.4.11\\54450c0c783e896a1a6d88c043bd2f1daba1c382\\logback-classic-1.4.11.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.logging.log4j\\log4j-to-slf4j\\2.21.1\\d77b2ba81711ed596cd797cc2b5b5bd7409d841c\\log4j-to-slf4j-2.21.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.slf4j\\jul-to-slf4j\\2.0.9\\9ef7c70b248185845f013f49a33ff9ca65b7975\\jul-to-slf4j-2.0.9.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.slf4j\\slf4j-api\\2.0.9\\7cf2726fdcfbc8610f9a71fb3ed639871f315340\\slf4j-api-2.0.9.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\jakarta.activation\\jakarta.activation-api\\2.1.2\\640c0d5aff45dbff1e1a1bc09673ff3a02b1ba12\\jakarta.activation-api-2.1.2.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\net.minidev\\accessors-smart\\2.5.0\\aca011492dfe9c26f4e0659028a4fe0970829dd8\\accessors-smart-2.5.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\net.bytebuddy\\byte-buddy\\1.14.10\\8117daf4a612122eb4f517f66adff778cb8b4737\\byte-buddy-1.14.10.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\net.bytebuddy\\byte-buddy-agent\\1.14.10\\90ed94ac044ea8953b224304c762316e91fd6b31\\byte-buddy-agent-1.14.10.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.objenesis\\objenesis\\3.3\\1049c09f1de4331e8193e579448d0916d75b7631\\objenesis-3.3.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\com.vaadin.external.google\\android-json\\0.0.20131108.vaadin1\\fa26d351fe62a6a17f5cda1287c1c6110dec413f\\android-json-0.0.20131108.vaadin1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-jcl\\6.1.1\\69ebbf7bad707d34e81d00213c756bc6fcc31dd7\\spring-jcl-6.1.1.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\io.micrometer\\micrometer-commons\\1.12.0\\2436654d439bd4ff6aad6419519357be8ba4f0d\\micrometer-commons-1.12.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.attoparser\\attoparser\\2.0.7.RELEASE\\e5d0e988d9124139d645bb5872b24dfa23e283cc\\attoparser-2.0.7.RELEASE.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.unbescape\\unbescape\\1.1.6.RELEASE\\7b90360afb2b860e09e8347112800d12c12b2a13\\unbescape-1.1.6.RELEASE.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.ow2.asm\\asm\\9.3\\8e6300ef51c1d801a7ed62d07cd221aca3a90640\\asm-9.3.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.opentest4j\\opentest4j\\1.3.0\\152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e\\opentest4j-1.3.0.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\ch.qos.logback\\logback-core\\1.4.11\\2f9f280219a9922a74200eaf7138c4c17fb87c0f\\logback-core-1.4.11.jar;C:\\Users\\lenovo\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.logging.log4j\\log4j-api\\2.21.1\\74c65e87b9ce1694a01524e192d7be989ba70486\\log4j-api-2.21.1.jar;C:\\Users\\lenovo\\.gradle\\wrapper\\dists\\gradle-8.5-bin\\5t9huq95ubn472n8rpzujfbqh\\gradle-8.5\\lib\\plugins\\junit-platform-engine-1.8.2.jar;C:\\Users\\lenovo\\.gradle\\wrapper\\dists\\gradle-8.5-bin\\5t9huq95ubn472n8rpzujfbqh\\gradle-8.5\\lib\\plugins\\junit-platform-launcher-1.8.2.jar;C:\\Users\\lenovo\\.gradle\\wrapper\\dists\\gradle-8.5-bin\\5t9huq95ubn472n8rpzujfbqh\\gradle-8.5\\lib\\plugins\\junit-platform-commons-1.8.2.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 536870912                                 {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 536870912                              {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\putty\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\PROGRA~2\Aldec\ACTIVE~1.3\BIN;D:\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;D:\MATLAB\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Python34\Scripts;C:\Users\lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\putty\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\PROGRA~2\Aldec\ACTIVE~1.3\BIN;D:\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;D:\MATLAB\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;D:\ELM\0.19.1\bin;C:\Users\lenovo\AppData\Local\Microsoft\WindowsApps;;D:\OJI\FP\bin\i386-Win32;C:\Program Files (x86)\Nmap;C:\Users\lenovo\.dotnet\tools;D:\CLION;D:\ghcup\bin;D:\visual studio\code\bin
+USERNAME=lenovo
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+TMP=C:\Users\lenovo\AppData\Local\Temp
+TEMP=C:\Users\lenovo\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+OS uptime: 10 days 20:32 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 158 stepping 10 microcode 0xb4, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, f16c
+Processor Information for all 8 processors :
+  Max Mhz: 2400, Current Mhz: 2400, Mhz Limit: 2400
+
+Memory: 4k page, system-wide physical 8072M (314M free)
+TotalPageFile size 18200M (AvailPageFile size 111M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 59M, peak: 187M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.1+12-29) for windows-amd64 JRE (21.0.1+12-29), built on 2023-10-05T13:27:09Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.
