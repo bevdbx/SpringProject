@@ -40,6 +40,4 @@ public class EventCategoryController {
         eventCategoryRepository.save(newEvent);
         return "redirect:/categories";
     }
-
-
 }
